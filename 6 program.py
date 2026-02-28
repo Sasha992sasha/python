@@ -16,7 +16,7 @@ elif c == "/":
     if b!=0:
         print(a/b)
     else:
-        print("Ну ділить на 0 це моцно")
+        print("Ділення на 0")
 
 elif c == "**":
     print(a**b)
