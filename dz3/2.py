@@ -3,6 +3,7 @@ class Product:
         self.name = name
         self.price = price
         self.count = count
+        self.suma = price*count
 
 class Cart:
     def __init__(self):
@@ -27,3 +28,4 @@ cart.add (t1)
 cart.add (t2)
 
 cart.printer()
+cart.suma()
