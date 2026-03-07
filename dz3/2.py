@@ -15,7 +15,8 @@ class Cart:
         self.spisok.pop(index)
     
     def printer(self):
-        pass
+        for index, item in enumerate(self.spisok):
+            print(f"{index}: {item.name}")
 
 t1 = Product("Яблуко" , 20 , 1)
 t2 = Product("Молоко" , 2 ,13)
