@@ -12,7 +12,7 @@ class Cart:
         self.spisok.append(prod)
     
     def remove(self,index):
-        if 0<= index:
+        if  0 <= index < len(self.spisok):
             self.spisok.pop(index)
         else:
             print('Шось не то')
