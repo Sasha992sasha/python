@@ -13,7 +13,8 @@ class TaskMBR:
                     i = i.strip()
                     name,dedline,deskr = i.strip().split(' | ')
                     self.tasks.append(Task(name,dedline,deskr))
-        except :
+        except FileNotFoundError :
+
             print("Нема твоїх завдань(")
             a = open("task.txt" , "w")
     
@@ -24,7 +25,6 @@ class TaskMBR:
     
     def add(self,file):
         self.tasks.append(file)
-        self.save_file
 
     def remov(self,index):
         try:
