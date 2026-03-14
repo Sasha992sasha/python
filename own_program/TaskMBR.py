@@ -18,7 +18,6 @@ class TaskMBR:
             a = open("task.txt" , "w")
     
     def save_file(self):
-        
         with open ("task.txt" , 'w') as f:
             for i in self.tasks:
                 f.write(f"{i.name} | {i.dedline} | {i.deskr}")
@@ -28,7 +27,10 @@ class TaskMBR:
         self.save_file
 
     def remov(self,index):
-        self.tasks.pop(index)
+        try:
+            self.tasks.pop(index)
+        except IndexError:
+            input('В тебе пусто ')
 
     def print_task(self):
         for index , i in enumerate(self.tasks):  
@@ -52,4 +54,9 @@ if a == 1:
     MBR.add(e)
     print("Ось список")
     MBR.print_task()
+    MBR.save_file()
     input()
+elif a == 2:
+    f = int(input("Введи id "))
+    MBR.remov(f)
+    MBR.save_file()
