@@ -10,17 +10,17 @@ class TaskMBR:
         try:
             with open("task.txt" , "r")as f:
                 for i in f:
-                    i.strip()
+                    i = i.strip()
                     name,dedline,deskr = i.strip().split(' | ')
                     self.tasks.append(Task(name,dedline,deskr))
-        except:
+        except :
             print("Нема твоїх завдань(")
             a = open("task.txt" , "w")
     
     def save_file(self):
         with open ("task.txt" , 'w') as f:
             for i in self.tasks:
-                f.write(f"{i.name} | {i.dedline} | {i.deskr}")
+                f.write(f"{i.name} | {i.dedline} | {i.deskr} \n")
     
     def add(self,file):
         self.tasks.append(file)
@@ -56,7 +56,9 @@ if a == 1:
     MBR.print_task()
     MBR.save_file()
     input()
+    
 elif a == 2:
     f = int(input("Введи id "))
     MBR.remov(f)
     MBR.save_file()
+    MBR.print_task()
