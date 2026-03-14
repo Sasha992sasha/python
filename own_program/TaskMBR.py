@@ -27,15 +27,18 @@ class TaskMBR:
         self.tasks.append(file)
         self.save_file
 
+    def remov(self,index):
+        self.tasks.pop(index)
+
     def print_task(self):
-        for i in self.tasks:
-            print(f"{i.name} {i.dedline} {i.deskr}")
+        for index , i in enumerate(self.tasks):  
+            print(f"{index}: {i.name} | {i.dedline} | {i.deskr}")
 
 MBR = TaskMBR()
 
 
 a = input('Введи назву ')
-b = input('Введи дедлайн')
+b = input('Введи дедлайн ')
 c = input('Введи опис ')
 
 d = Task(a , b , c)
