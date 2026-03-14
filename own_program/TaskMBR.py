@@ -36,13 +36,20 @@ class TaskMBR:
 
 MBR = TaskMBR()
 
-
-a = input('Введи назву ')
-b = input('Введи дедлайн ')
-c = input('Введи опис ')
-
-d = Task(a , b , c)
-
-MBR.add(d)
-MBR.save_file()
 MBR.print_task()
+
+try:
+    a = int(input('Введи дію 1-додати 2-прибрать '))
+except ValueError:
+    print("Пока")
+
+
+if a == 1:
+    b = input("Введи назву ")
+    c = input("Введи дедлайн ")
+    d = input("Введи опис ")
+    e = Task(b,c,d)
+    MBR.add(e)
+    print("Ось список")
+    MBR.print_task()
+    input()
